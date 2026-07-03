@@ -24,7 +24,7 @@ export default function Home() {
         <div className="rise" style={{ animationDelay: "0.1s" }}>
           <Image
             src="/logo.png"
-            alt="Cheval.BTL — Producción integral, eventos, promociones y activaciones"
+            alt=""
             width={480}
             height={315}
             priority
