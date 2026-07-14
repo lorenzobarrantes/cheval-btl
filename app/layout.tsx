@@ -9,9 +9,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Cheval.BTL — Próximamente",
+  title: "Cheval.BTL — Agencia y Productora Integral",
   description:
-    "Producción integral, eventos, promociones y activaciones. Muy pronto, nuestro nuevo sitio.",
+    "Creamos y ejecutamos experiencias de alto impacto. Eventos, activaciones y promociones. Desarrollamos historias que dejan marca.",
 };
 
 export default function RootLayout({
@@ -19,6 +19,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
+      
+      <meta name="apple-mobile-web-app-title" content="ChevalBTL" />
       <body className={`${montserrat.variable} font-sans antialiased`}>
         {children}
       </body>
