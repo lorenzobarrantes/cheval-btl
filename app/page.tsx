@@ -306,33 +306,37 @@ export default function Home() {
             >
               Desarrollamos historias que emocionan. La experiencia marca.
             </p>
-
+            <p
+              className="mt-8 text-[8px]  uppercase tracking-[0.3em] text-gray-300 sm:hidden"
+              style={{ animationDelay: "2.15s" }}
+            >
+              Estos trabajos fueron ejecutados conformando y liderando
+              equipos en agencias anteriores, propias y de terceros.
+            </p>
           </div>
-        <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 ">
-  <p
-    className="rise max-w- text-center text-[10px] uppercase leading-relaxed tracking-[0.25em] text-gray-300 sm:max-w-none sm:text-xs"
-    style={{ animationDelay: "2.15s" }}
-  >
-    Estos trabajos fueron ejecutados conformando y liderando equipos en
-    agencias anteriores, propias y de terceros.
-  </p>
- <a 
-    href="#quienes-somos"
-    aria-label="Bajar a Quiénes somos"
-    className="rise text-bone/40 transition-colors hover:text-orange-brand"
-    style={{ animationDelay: "2.4s" }}
-  >
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      className="h-7 w-7 animate-bounce"
-    >
-      <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </a>
-</div>
+          <p
+            className="hidden sm:flex mt-8 absolute bottom-24 text-sm uppercase tracking-[0.3em] text-gray-300 sm:text-sm"
+            style={{ animationDelay: "2.15s" }}
+          >
+            Estos trabajos fueron ejecutados conformando y liderando<br></br>
+            equipos en agencias anteriores, propias y de terceros.
+          </p>
+          <a
+            href="#quienes-somos"
+            aria-label="Bajar a Quiénes somos"
+            className="rise absolute bottom-8 text-bone/40 transition-colors hover:text-orange-brand"
+            style={{ animationDelay: "2.4s" }}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="h-7 w-7 animate-bounce"
+            >
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </section>
 
         {/* ---------- Quiénes somos ---------- */}
