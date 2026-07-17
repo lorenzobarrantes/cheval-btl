@@ -304,7 +304,7 @@ export default function Home() {
               className="rise mt-8 text-sm font-medium uppercase tracking-[0.3em] text-blue-soft sm:text-base"
               style={{ animationDelay: "2.15s" }}
             >
-              Desarrollamos historias que emocionan la experiencia marca.
+              Desarrollamos historias que emocionan. La experiencia marca.
             </p>
             <p
               className="rise mt-8 text-[8px] uppercase tracking-[0.3em] text-gray-300 sm:text-[9px]"
