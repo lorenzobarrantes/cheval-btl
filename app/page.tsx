@@ -158,66 +158,66 @@ export default function Home() {
       <Loader done={loaded} />
 
       {/* ---------- Nav ---------- */}
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-carbon/80 backdrop-blur-md">
-  <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-    <a href="#inicio" aria-label="Cheval.BTL — Inicio" onClick={() => setMenuOpen(false)}>
-      <Image
-        src="/logo-horizontal-sinfondo.png"
-        alt="Cheval.BTL"
-        width={1471}
-        height={253}
-        className="h-8 w-auto sm:h-10"
-      />
-    </a>
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-carbon/80 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <a href="#inicio" aria-label="Cheval.BTL — Inicio" onClick={() => setMenuOpen(false)}>
+            <Image
+              src="/logo-horizontal-sinfondo.png"
+              alt="Cheval.BTL"
+              width={1471}
+              height={253}
+              className="h-8 w-auto sm:h-10"
+            />
+          </a>
 
-    {/* Links desktop */}
-    <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.2em] text-bone/70 sm:flex">
-      {nav.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          className="transition-colors hover:text-orange-brand"
-        >
-          {item.label}
-        </a>
-      ))}
-    </nav>
+          {/* Links desktop */}
+          <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.2em] text-bone/70 sm:flex">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition-colors hover:text-orange-brand"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
-    {/* Botón hamburguesa (solo mobile) */}
-    <button
-      onClick={() => setMenuOpen((o) => !o)}
-      aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-      aria-expanded={menuOpen}
-      className="text-bone sm:hidden"
-    >
-      {menuOpen ? (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-          <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
-          <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-        </svg>
-      )}
-    </button>
-  </div>
+          {/* Botón hamburguesa (solo mobile) */}
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+            className="text-bone sm:hidden"
+          >
+            {menuOpen ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
+        </div>
 
-  {/* Menú desplegable mobile */}
-  {menuOpen && (
-    <nav className="flex flex-col gap-1 border-t border-white/5 bg-carbon/95 px-6 py-4 backdrop-blur-md sm:hidden">
-      {nav.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          onClick={() => setMenuOpen(false)}
-          className="py-2 text-sm font-medium uppercase tracking-[0.2em] text-bone/80 transition-colors hover:text-orange-brand"
-        >
-          {item.label}
-        </a>
-      ))}
-    </nav>
-  )}
-</header>
+        {/* Menú desplegable mobile */}
+        {menuOpen && (
+          <nav className="flex flex-col gap-1 border-t border-white/5 bg-carbon/95 px-6 py-4 backdrop-blur-md sm:hidden">
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="py-2 text-sm font-medium uppercase tracking-[0.2em] text-bone/80 transition-colors hover:text-orange-brand"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )}
+      </header>
 
       <main>
         {/* ---------- Hero ---------- */}
@@ -306,31 +306,33 @@ export default function Home() {
             >
               Desarrollamos historias que emocionan. La experiencia marca.
             </p>
-            <p
-              className="rise mt-8 text-[8px] uppercase tracking-[0.3em] text-gray-300 sm:text-[9px]"
-              style={{ animationDelay: "2.15s" }}
-            >
-              Estos trabajos fueron ejecutados conformando y liderando
-              equipos en agencias anteriores, propias y de terceros.
-            </p>
-          </div>
 
-          <a
-            href="#quienes-somos"
-            aria-label="Bajar a Quiénes somos"
-            className="rise absolute bottom-8 text-bone/40 transition-colors hover:text-orange-brand"
-            style={{ animationDelay: "2.4s" }}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="h-7 w-7 animate-bounce"
-            >
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          </div>
+        <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 ">
+  <p
+    className="rise max-w- text-center text-[10px] uppercase leading-relaxed tracking-[0.25em] text-gray-300 sm:max-w-none sm:text-xs"
+    style={{ animationDelay: "2.15s" }}
+  >
+    Estos trabajos fueron ejecutados conformando y liderando equipos en
+    agencias anteriores, propias y de terceros.
+  </p>
+ <a 
+    href="#quienes-somos"
+    aria-label="Bajar a Quiénes somos"
+    className="rise text-bone/40 transition-colors hover:text-orange-brand"
+    style={{ animationDelay: "2.4s" }}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="h-7 w-7 animate-bounce"
+    >
+      <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </a>
+</div>
         </section>
 
         {/* ---------- Quiénes somos ---------- */}
