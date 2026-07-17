@@ -152,41 +152,72 @@ export default function Home() {
     v.muted = !v.muted;
     setMuted(v.muted);
   }
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <Loader done={loaded} />
 
       {/* ---------- Nav ---------- */}
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-carbon/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <a href="#inicio" aria-label="Cheval.BTL — Inicio">
-            <Image
-              src="/logo.png"
-              alt="Cheval.BTL"
-              width={761}
-              height={583}
-              className="h-12 w-auto"
-            />
-          </a>
-          <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.2em] text-bone/70 sm:flex">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="transition-colors hover:text-orange-brand"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href="#contacto"
-            className="text-[11px] font-medium uppercase tracking-[0.2em] text-orange-brand sm:hidden"
-          >
-            Contacto
-          </a>
-        </div>
-      </header>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-carbon/80 backdrop-blur-md">
+  <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <a href="#inicio" aria-label="Cheval.BTL — Inicio" onClick={() => setMenuOpen(false)}>
+      <Image
+        src="/logo-horizontal-sinfondo.png"
+        alt="Cheval.BTL"
+        width={1471}
+        height={253}
+        className="h-8 w-auto sm:h-10"
+      />
+    </a>
+
+    {/* Links desktop */}
+    <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.2em] text-bone/70 sm:flex">
+      {nav.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          className="transition-colors hover:text-orange-brand"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    {/* Botón hamburguesa (solo mobile) */}
+    <button
+      onClick={() => setMenuOpen((o) => !o)}
+      aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+      aria-expanded={menuOpen}
+      className="text-bone sm:hidden"
+    >
+      {menuOpen ? (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+          <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-6 w-6">
+          <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+        </svg>
+      )}
+    </button>
+  </div>
+
+  {/* Menú desplegable mobile */}
+  {menuOpen && (
+    <nav className="flex flex-col gap-1 border-t border-white/5 bg-carbon/95 px-6 py-4 backdrop-blur-md sm:hidden">
+      {nav.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          onClick={() => setMenuOpen(false)}
+          className="py-2 text-sm font-medium uppercase tracking-[0.2em] text-bone/80 transition-colors hover:text-orange-brand"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  )}
+</header>
 
       <main>
         {/* ---------- Hero ---------- */}
@@ -249,7 +280,7 @@ export default function Home() {
               className="rise mt-6 text-lg font-light text-bone/80 sm:text-2xl"
               style={{ animationDelay: "1.85s" }}
             >
-              Creamos y ejecutamos experiencias de alto impacto.
+              Creamos y ejecutamos momentos de alto impacto.
             </p>
 
             <svg
@@ -273,7 +304,14 @@ export default function Home() {
               className="rise mt-8 text-sm font-medium uppercase tracking-[0.3em] text-blue-soft sm:text-base"
               style={{ animationDelay: "2.15s" }}
             >
-              Desarrollamos historias que dejan marca.
+              Desarrollamos historias que emocionan la experiencia marca.
+            </p>
+            <p
+              className="rise mt-8 text-[8px] uppercase tracking-[0.3em] text-gray-300 sm:text-[9px]"
+              style={{ animationDelay: "2.15s" }}
+            >
+              Estos trabajos fueron ejecutados conformando y liderando
+              equipos en agencias anteriores, propias y de terceros.
             </p>
           </div>
 
@@ -305,21 +343,19 @@ export default function Home() {
             </Reveal>
             <Reveal delay={100}>
               <p className="mt-8 text-xl font-light leading-relaxed text-bone sm:text-2xl">
-                Trabajamos más de 25 años en las principales agencias del
-                mercado, creando y ejecutando experiencias de alto impacto para
-                grandes marcas.
+                Trabajamos más de 25 años en las principales agencias del mercado, creando y ejecutando experiencias de alto impacto para las mejores marcas.
               </p>
             </Reveal>
-            <Reveal delay={200}>
+            {/* <Reveal delay={200}>
               <p className="mt-6 text-lg font-light leading-relaxed text-bone/70">
                 Creamos y diseñamos estrategias innovadoras, enfocados en la
                 excelencia de la ejecución.
               </p>
-            </Reveal>
+            </Reveal> */}
             <Reveal delay={300}>
               <p className="mt-6 border-l-2 border-orange-brand pl-5 text-lg font-normal italic leading-relaxed text-blue-soft">
-                Para nosotros un brief es una oportunidad única para crear una
-                gran historia que deje marca.
+                Creamos y diseñamos estrategias innovadoras, enfocados en la
+                excelencia de la ejecución.
               </p>
             </Reveal>
 
@@ -473,6 +509,15 @@ export default function Home() {
               className="text-bone/60 transition-colors hover:text-orange-brand"
             >
               <InstagramIcon className="h-6 w-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/cheval-btl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Cheval.BTL"
+              className="text-bone/60 transition-colors hover:text-blue-500"
+            >
+              <LinkedInIcon className="h-6 w-6" />
             </a>
             {/* YouTube: descomentar cuando exista el canal
             <a href="https://www.youtube.com/@chevalbtl" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Cheval.BTL" className="text-bone/60 transition-colors hover:text-orange-brand">
