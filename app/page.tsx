@@ -274,7 +274,7 @@ export default function Home() {
               className="rise mt-6 text-3xl font-bold uppercase leading-tight tracking-tight text-bone sm:text-5xl lg:text-6xl"
               style={{ animationDelay: "1.65s" }}
             >
-              Somos una nueva agencia y productora integral.
+              Somos una agencia y productora integral.
             </h1>
             <p
               className="rise mt-6 text-lg font-light text-bone/80 sm:text-2xl"
@@ -349,7 +349,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={100}>
               <p className="mt-8 text-xl font-light leading-relaxed text-bone sm:text-2xl">
-                Trabajamos más de 25 años en las principales agencias del mercado, creando y ejecutando experiencias de alto impacto para las mejores marcas.
+                Trabajamos más de 25 años en las principales agencias del mercado, creando y ejecutando experiencias de alto impacto para las mejores marcas. Hoy somos Cheval.BTL.
               </p>
             </Reveal>
             {/* <Reveal delay={200}>
